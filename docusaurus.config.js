@@ -16,7 +16,13 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
+        {to: 'experiences', label: 'Experiences', position: 'left'},
+        {to: 'projects', label: 'Projects', position: 'left'},
         {to: 'blog', label: 'Blog', position: 'left'},
+        {to: 'skills', label: 'Skills', position: 'left'},
+        {to: 'educations', label: 'Educations', position: 'left'},
+        {to: 'about', label: 'About', position: 'left'},
+        {to: 'contact', label: 'Contact', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
