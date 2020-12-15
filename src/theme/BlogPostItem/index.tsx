@@ -68,29 +68,6 @@ function BlogPostItem(props: Props): JSX.Element {
             {readingTime && <> · {Math.ceil(readingTime)} min read</>}
           </time>
         </div>
-        <div className="avatar margin-vert--md">
-          {authorImageURL && (
-            <a
-              className="avatar__photo-link avatar__photo"
-              href={authorURL}
-              target="_blank"
-              rel="noreferrer noopener">
-              <img src={authorImageURL} alt={author} />
-            </a>
-          )}
-          <div className="avatar__intro">
-            {author && (
-              <>
-                <h4 className="avatar__name">
-                  <a href={authorURL} target="_blank" rel="noreferrer noopener">
-                    {author}
-                  </a>
-                </h4>
-                <small className="avatar__subtitle">{authorTitle}</small>
-              </>
-            )}
-          </div>
-        </div>
       </header>
     );
   };
@@ -113,32 +90,6 @@ function BlogPostItem(props: Props): JSX.Element {
         <section className="markdown">
           <MDXProvider components={MDXComponents}>{children}</MDXProvider>
         </section>
-        {(tags.length > 0 || truncated) && (
-          <footer className="row margin-vert--lg">
-            {tags.length > 0 && (
-              <div className="col">
-                <strong>Tags:</strong>
-                {tags.map(({label, permalink: tagPermalink}) => (
-                  <Link
-                    key={tagPermalink}
-                    className="margin-horiz--sm"
-                    to={tagPermalink}>
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            )}
-            {truncated && (
-              <div className="col text--right">
-                <Link
-                  to={metadata.permalink}
-                  aria-label={`Read more about ${title}`}>
-                  <strong>Read More</strong>
-                </Link>
-              </div>
-            )}
-          </footer>
-        )}
       </article>
     </>
   );

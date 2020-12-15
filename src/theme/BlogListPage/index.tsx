@@ -29,9 +29,6 @@ function BlogListPage(props: Props): JSX.Element {
       wrapperClassName="blog-wrapper">
       <div className="container margin-vert--lg">
         <div className="row">
-          <div className="col col--2">
-            <BlogSidebar sidebar={sidebar} />
-          </div>
           <main className="col col--8">
             {items.map(({content: BlogPostContent}) => (
               <BlogPostItem
